@@ -9,7 +9,7 @@
       destination="1001"
       >
     <genericsetup:upgradeDepends
-        title="Altera timezone para Brazil/East"
+        title="Altera timezone para America/Sao_Paulo"
         import_steps="plone.app.registry"
         />
   </genericsetup:upgradeSteps>
@@ -29,4 +29,18 @@
         />
   </genericsetup:upgradeSteps>
 
+  <genericsetup:upgradeSteps
+      profile="trepr.intranet:default"
+      source="1002"
+      destination="1003"
+      >
+    <genericsetup:upgradeDepends
+        title="Adiciona o tipo Área"
+        import_steps="typeinfo"
+        />
+    <genericsetup:upgradeDepends
+        title="Aplica permissionamento para tipo de conteúdo Área"
+        import_steps="rolemap"
+        />
+  </genericsetup:upgradeSteps>
 </configure>
