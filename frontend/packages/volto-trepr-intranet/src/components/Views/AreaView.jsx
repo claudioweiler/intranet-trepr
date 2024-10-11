@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { getBaseUrl } from '@plone/volto/helpers';
 import { Container } from '@plone/components';
 import ContactInfo from '../ContactInfo/ContactInfo';
+import EnderecoInfo from '../EnderecoInfo/EnderecoInfo';
 import RenderBlocks from '@plone/volto/components/theme/View/RenderBlocks';
 
 const AreaView = (props) => {
@@ -12,6 +13,7 @@ const AreaView = (props) => {
   return (
     <Container id="page-document" className="view-wrapper area-view">
       <RenderBlocks {...props} path={path} />
+      <EnderecoInfo content={content} />
       <ContactInfo content={content} />
     </Container>
   );
