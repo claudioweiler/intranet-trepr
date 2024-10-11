@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Container } from '@plone/components';
+
 const EnderecoInfo = ({ content }) => {
   const { endereco, complemento, cidade, estado, cep } = content;
   return (
@@ -16,8 +17,12 @@ const EnderecoInfo = ({ content }) => {
         </Container>
       )}
       <Container>
-        <span className="cidade">{cidade}</span> -{' '}
-        <span className="estado">{estado}</span>
+        <span className="cidade">{cidade}</span>
+        {estado && (
+          <>
+            - <span className="estado">{estado.token}</span>
+          </>
+        )}
       </Container>
       {cep && (
         <Container>
@@ -32,7 +37,10 @@ EnderecoInfo.propTypes = {
     endereco: PropTypes.string,
     complemento: PropTypes.string,
     cidade: PropTypes.string,
-    estado: PropTypes.string,
+    estado: PropTypes.shape({
+      token: PropTypes.string,
+      title: PropTypes.string,
+    }),
     cep: PropTypes.string,
   }).isRequired,
 };
