@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container, Link } from '@plone/components';
-import { UniversalLink } from '@plone/volto/components';
-import { Image } from '@plone/volto/components';
+import { Container } from '@plone/components';
+import { Image, UniversalLink } from '@plone/volto/components';
 import ContactInfo from '../ContactInfo/ContactInfo';
 import EnderecoInfo from '../EnderecoInfo/EnderecoInfo';
 
