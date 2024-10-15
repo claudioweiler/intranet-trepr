@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Container } from '@plone/components';
+import { Container, Link } from '@plone/components';
+import { UniversalLink } from '@plone/volto/components';
 import { Image } from '@plone/volto/components';
 import ContactInfo from '../ContactInfo/ContactInfo';
 import EnderecoInfo from '../EnderecoInfo/EnderecoInfo';
@@ -25,6 +26,10 @@ const PessoaView = (props) => {
         <span className={`cargo cargo-${content.cargo.token}`}>
           {content.cargo.title}
         </span>
+      )}
+      &nbsp;-&nbsp;
+      {content.area && (
+        <UniversalLink item={content.area}>{content.area.title}</UniversalLink>
       )}
       <h1 className="documentFirstHeading">{content.title}</h1>
       {content.description && (
